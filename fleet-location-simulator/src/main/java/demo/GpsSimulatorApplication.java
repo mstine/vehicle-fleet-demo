@@ -24,11 +24,13 @@ import org.springframework.boot.actuate.metrics.repository.InMemoryMetricReposit
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import de.micromata.opengis.kml.v_2_2_0.Kml;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Main entry point for the GpsSimulator application.
@@ -62,5 +64,11 @@ public class GpsSimulatorApplication {
 
 		jaxb2Marshaller.setMarshallerProperties(map);
 		return jaxb2Marshaller;
+	}
+
+	@Bean
+	@LoadBalanced
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 }

@@ -3,6 +3,8 @@ server:
 
 management:
   context-path: /admin
+  security:
+    enabled: false
   
 logging:
   level:

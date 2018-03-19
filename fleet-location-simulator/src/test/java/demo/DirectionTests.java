@@ -24,9 +24,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -34,14 +32,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import demo.model.DirectionInput;
 import demo.model.Point;
 import demo.service.PathService;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author Gunnar Hillert
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@Configuration
-@SpringApplicationConfiguration(classes = {GpsSimulatorApplication.class})
+@RunWith(SpringRunner.class)
+//@Configuration
+@SpringBootTest
 public class DirectionTests {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DirectionTests.class);
