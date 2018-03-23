@@ -817,8 +817,8 @@ function setupMapLegend() {
 
 	info.onAdd = function(map) {
 		this._div = L.DomUtil.create('div', 'info');
-		var img = '<img src="https://www.mapbox.com/maki/renders/bus-18' + (L.Browser.retina ? '@2x' : '') + '.png" height="18" width="18">';
-		this._div.innerHTML = '<h4 style="color: black">RentMe Vehicles</h4>'
+        var img = '<img src="http://a.tiles.mapbox.com/v4/marker/pin-l-bus+7e7e7e' + (L.Browser.retina ? '@2x' : '') + '.png?access_token=pk.eyJ1IjoiYWxiZXJ0b2FmbG9yZXMiLCJhIjoiS3duWUxzUSJ9.X1rRTTRkktNR7DFIc0DsCw" height="90" width="35">';
+        this._div.innerHTML = '<h4 style="color: black">RentMe Vehicles</h4>'
 				+ '<i class="faa-flash animated">' + img + '</i> Moving &nbsp;&nbsp;&nbsp;&nbsp; ' + img + ' Stopped <br/>'
 				+ '<i class="fa fa-map-marker" style="color: green;"></i> Normal &nbsp;&nbsp;'
 				+ '<i class="fa fa-map-marker" style="color: blue"></i> ServiceInfo &nbsp;&nbsp;'
