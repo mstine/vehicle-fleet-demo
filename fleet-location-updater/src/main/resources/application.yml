@@ -7,13 +7,13 @@ spring:
     stream:
       bindings:
         input:
-         destination:
-        vehicles
+         destination: vehicles
 
 ---
 spring:
   profiles: test
 ribbon:
+  IsSecure: false
   eureka:
     enabled: false
 service-location-service:

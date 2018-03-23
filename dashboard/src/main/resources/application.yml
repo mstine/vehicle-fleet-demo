@@ -5,7 +5,13 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
+  IsSecure: false
+
 stomp.url: localhost:9007/stomp
+management:
+  security:
+    enabled: false
+
 
 ---
 spring:
@@ -15,6 +21,7 @@ zuul:
     fleet-location-service:
       path: /fleet-location-service/**
       url: http://localhost:9000
+
     service-location-service:
       path: /service-location-service/**
       url: http://localhost:9001
